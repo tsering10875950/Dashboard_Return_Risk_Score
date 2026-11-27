@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard1";
+import Dashboard2 from "./pages/Dashboard2";
 import LTMLogo from "./assets/LTM.png";
 import HeroBG from "./assets/HeroBG.webp";
 import HeroShopping from "./assets/hero-shopping.webp";
@@ -730,8 +731,20 @@ function App() {
     }
     onClick={() => setPage("dashboard")}
   >
-    Dashboard
+    Dashboard1
   </button>
+
+  <button
+  type="button"
+  className={
+    page === "dashboard2"
+      ? "nav-button active"
+      : "nav-button"
+  }
+  onClick={() => setPage("dashboard2")}
+>
+  Dashboard2
+</button>
 
           <button
             type="button"
@@ -1377,6 +1390,9 @@ function App() {
         ) 
         : page === "dashboard" ? (
           <Dashboard />)
+           : page === "dashboard2" ? (
+  <Dashboard2 />
+)
         : (
           <section className="about-page">
             <div className="about-card">
